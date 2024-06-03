@@ -1,0 +1,21 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update the OS
+    dnf:
+      name: "*"
+      state: latest
+
+
+  - name: install docker-ce package
+    dnf:
+      name: podman
+      state: latest
+
+  - name: install nginx package
+    dnf:
+      name: nginx
+      state: latest
